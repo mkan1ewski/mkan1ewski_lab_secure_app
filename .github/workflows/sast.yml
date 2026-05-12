@@ -32,4 +32,5 @@ jobs:
           -e BRANCH=${{ steps.vars.outputs.branch }} \
           -e MIXEWAY_FAIL_THRESHOLD=1 \
           -v $(pwd):/opt/sources \
-          mixeway/scanner:latest 
+          mixeway/scanner:latest
+ 
