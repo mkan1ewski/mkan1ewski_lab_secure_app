@@ -1,3 +1,7 @@
+on:
+  push:
+    branches: [ master ]
+
 name: Perform Mixeway Scan
 jobs:
   mixeway-scan:
@@ -16,4 +20,4 @@ jobs:
           docker pull mixeway/scanner:latest
       - name: Run Scan
         run: |
-          docker run -e OSS_USERNAME="01178533@pw.edu.pl" -e OSS_KEY="sonatype_pat_hSFpXWKIyPoHfucPiNHPck0UziCRwRZravMvGxKroPgbcZ2m" -e MIXEWAY_URL=https://hub.mixeway.io -e MIXEWAY_KEY="ffd743c4-cc6b-41ad-9f7a-5ef109b3bc87" -e MIXEWAY_PROJECT_ID=211 -e MODE=STANDALONE -e MIXEWAY_PROJECT_NAME="mkan1ewski_lab_secure_app" -e COMMIT_ID=${{ steps.vars.outputs.sha_short }} -e BRANCH=${{ steps.vars.outputs.branch }} -v $(pwd):/opt/sources mixeway/scanner:latest
+          docker run -e OSS_USERNAME="01178533@pw.edu.pl" -e OSS_KEY="sonatype_pat_hSFpXWKIyPoHfucPiNHPck0UziCRwRZravMvGxKroPgbcZ2m" -e MIXEWAY_URL=https://hub.mixeway.io -e MIXEWAY_KEY="ffd743c4-cc6b-41ad-9f7a-5ef109b3bc87" -e MIXEWAY_PROJECT_ID=211 -e MODE=STANDALONE -e MIXEWAY_PROJECT_NAME="mkan1ewski_lab_secure_app" -e COMMIT_ID=${{ steps.vars.outputs.sha_short }} -e BRANCH=${{ steps.vars.outputs.branch }} -v $(pwd):/opt/sources mixeway/scanner:latest 
